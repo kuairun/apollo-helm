@@ -1,26 +1,26 @@
 dependencies:
 - name: mysql
-  version: 0.10.2
-  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 0.3.5
+  repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
   alias: portalmysql
   condition: portalmysql.enabled
 - name: mysql
-  version: 0.10.2
-  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 0.3.5
+  repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
   alias: devconfigservicemysql
   condition: devconfigservicemysql.enabled
 - name: mysql
-  version: 0.10.2
-  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 0.3.5
+  repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
   alias: fatconfigservicemysql
   condition: fatconfigservicemysql.enabled
 - name: mysql
-  version: 0.10.2
-  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 0.3.5
+  repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
   alias: uatconfigservicemysql
   condition: uatconfigservicemysql.enabled
 - name: mysql
-  version: 0.10.2
-  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 0.3.5
+  repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
   alias: proconfigservicemysql
   condition: proconfigservicemysql.enabled

@@ -731,11 +731,9 @@ portal:
 
 devconfigservicemysql:
   enabled: true
+  mysqlRootPassword: "123456"
   mysqlUser: "admin"
   mysqlPassword: "admin"
-  # mysqlUser: "root"
-  # mysqlPassword: "123456"
-  mysqlRootPassword: "123456"
   mysqlDatabase: "ApolloConfigDB"
   ## Persist data to a persistent volume
   persistence:
@@ -746,10 +744,12 @@ devconfigservicemysql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "kr-glusterfs-storage-class"
     accessMode: ReadWriteOnce
-    size: 2Gi
-    annotations: {}
+    size: 500Mi
+    annotations: {
+      volume.beta.kubernetes.io/storage-class: "glusterfs"
+    }
   initializationFiles:
     initializationFiles-configservice.sql: |-
       /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -1116,11 +1116,13 @@ devconfigservicemysql:
 
       # Config
       # ------------------------------------------------------------
-      INSERT INTO `ServerConfig` (`Key`, `Cluster`, `Value`, `Comment`)      VALUES          ('eureka.service.url', 'default', 'http://apollo-devconfigservice:8080/eureka/', 'Eureka服务Url，多个service以英文逗号分隔'),
-          ('namespace.lock.switch', 'default', 'false', '一次发布只能有一个人修改开关'),
-          ('item.key.length.limit', 'default', '128', 'item key 最大长度限制'),
-          ('item.value.length.limit', 'default', '20000', 'item value最大长度限制'),
-          ('config-service.cache.enabled', 'default', 'false', 'ConfigService是否开启缓存，开启后能提高性能，但是会增大内存消耗！');
+      INSERT INTO `ServerConfig` (`Key`, `Cluster`, `Value`, `Comment`)      
+      VALUES          
+      ('eureka.service.url', 'default', 'http://apollo-devconfigservice:8080/eureka/', 'Eureka服务Url，多个service以英文逗号分隔'),
+      ('namespace.lock.switch', 'default', 'false', '一次发布只能有一个人修改开关'),
+      ('item.key.length.limit', 'default', '128', 'item key 最大长度限制'),
+      ('item.value.length.limit', 'default', '20000', 'item value最大长度限制'),
+      ('config-service.cache.enabled', 'default', 'false', 'ConfigService是否开启缓存，开启后能提高性能，但是会增大内存消耗！');
 
       /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
       /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1148,10 +1150,12 @@ fatconfigservicemysql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "kr-glusterfs-storage-class"
     accessMode: ReadWriteOnce
-    size: 2Gi
-    annotations: {}
+    size: 500Mi
+    annotations: {
+      volume.beta.kubernetes.io/storage-class: "glusterfs"
+    }
   initializationFiles:
     initializationFiles-configservice.sql: |-
       /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -1518,7 +1522,9 @@ fatconfigservicemysql:
 
       # Config
       # ------------------------------------------------------------
-      INSERT INTO `ServerConfig` (`Key`, `Cluster`, `Value`, `Comment`)      VALUES          ('eureka.service.url', 'default', 'http://apollo-fatconfigservice:8080/eureka/', 'Eureka服务Url，多个service以英文逗号分隔'),
+      INSERT INTO `ServerConfig` (`Key`, `Cluster`, `Value`, `Comment`)      
+      VALUES         
+          ('eureka.service.url', 'default', 'http://apollo-fatconfigservice:8080/eureka/', 'Eureka服务Url，多个service以英文逗号分隔'),
           ('namespace.lock.switch', 'default', 'false', '一次发布只能有一个人修改开关'),
           ('item.key.length.limit', 'default', '128', 'item key 最大长度限制'),
           ('item.value.length.limit', 'default', '20000', 'item value最大长度限制'),
@@ -1550,10 +1556,12 @@ uatconfigservicemysql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "kr-glusterfs-storage-class"
     accessMode: ReadWriteOnce
-    size: 2Gi
-    annotations: {}
+    size: 500Mi
+    annotations: {
+      volume.beta.kubernetes.io/storage-class: "glusterfs"
+    }
   initializationFiles:
     initializationFiles-configservice.sql: |-
       /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -1920,7 +1928,9 @@ uatconfigservicemysql:
 
       # Config
       # ------------------------------------------------------------
-      INSERT INTO `ServerConfig` (`Key`, `Cluster`, `Value`, `Comment`)      VALUES          ('eureka.service.url', 'default', 'http://apollo-uatconfigservice:8080/eureka/', 'Eureka服务Url，多个service以英文逗号分隔'),
+      INSERT INTO `ServerConfig` (`Key`, `Cluster`, `Value`, `Comment`)      
+      VALUES          
+          ('eureka.service.url', 'default', 'http://apollo-uatconfigservice:8080/eureka/', 'Eureka服务Url，多个service以英文逗号分隔'),
           ('namespace.lock.switch', 'default', 'false', '一次发布只能有一个人修改开关'),
           ('item.key.length.limit', 'default', '128', 'item key 最大长度限制'),
           ('item.value.length.limit', 'default', '20000', 'item value最大长度限制'),
@@ -1951,10 +1961,12 @@ proconfigservicemysql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "kr-glusterfs-storage-class"
     accessMode: ReadWriteOnce
-    size: 2Gi
-    annotations: {}
+    size: 500Mi
+    annotations: {
+      volume.beta.kubernetes.io/storage-class: "glusterfs"
+    }
   initializationFiles:
     initializationFiles-configservice.sql: |-
       /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -2136,7 +2148,6 @@ proconfigservicemysql:
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='使用配置的应用实例';
 
 
-
       # Dump of table instanceconfig
       # ------------------------------------------------------------
 
@@ -2160,7 +2171,6 @@ proconfigservicemysql:
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='应用实例的配置信息';
 
 
-
       # Dump of table item
       # ------------------------------------------------------------
 
@@ -2182,8 +2192,6 @@ proconfigservicemysql:
         KEY `IX_GroupId` (`NamespaceId`),
         KEY `DataChange_LastTime` (`DataChange_LastTime`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='配置项目';
-
-
 
       # Dump of table namespace
       # ------------------------------------------------------------
@@ -2352,10 +2360,12 @@ portalmysql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "kr-glusterfs-storage-class"
     accessMode: ReadWriteOnce
-    size: 2Gi
-    annotations: {}
+    size: 500Mi
+    annotations: {
+      volume.beta.kubernetes.io/storage-class: "glusterfs"
+    }
   initializationFiles:
     initializationFiles-portaldb.sql: |-
       /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -2660,7 +2670,6 @@ portalmysql:
         `Authority` varchar(50) NOT NULL,
         PRIMARY KEY (`Id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
       # Config
       # ------------------------------------------------------------
