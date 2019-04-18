@@ -23,7 +23,7 @@ helm install --name apollo --namespace kr-infra ./ ^
              --set uatadminservice.extraEnv."eureka.instance.hostname"="apollo-uatadminservice" ^
              --set uatadminservice.extraEnv."eureka.instance.preferIpAddress"="false" ^
              ^
-             --set fatconfigservicemysql.enabled=false ^
+             --set proconfigservicemysql.enabled=false ^
              --set proconfigservice.enabled=false ^
              --set proconfigservice.extraEnv."eureka.instance.hostname"="apollo-proconfigservice" ^
              --set proconfigservice.extraEnv."eureka.instance.preferIpAddress"="false" ^
@@ -38,9 +38,9 @@ helm install --name apollo --namespace kr-infra ./ ^
 @REM Set local storage
 @REM            --set portalmysql.persistence.storageClass="local-storage" ^
 @REM            --set devconfigservicemysql.persistence.storageClass="local-storage" ^
-@REM            --set proconfigservicemysql.persistence.storageClass="local-storage" ^
+@REM            --set uatconfigservicemysql.persistence.storageClass="local-storage" ^
 @REM            --set fatconfigservicemysql.persistence.storageClass="local-storage" ^
-@REM            --set uatconfigservicemysql.persistence.storageClass="local-storage"
+@REM            --set proconfigservicemysql.persistence.storageClass="local-storage"
 
 @REM For debug
 @REM            --set configservice.extraEnv."logging\.level\.root"=debug

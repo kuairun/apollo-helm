@@ -1137,8 +1137,6 @@ fatconfigservicemysql:
   enabled: true
   mysqlUser: "admin"
   mysqlPassword: "admin"
-  # mysqlUser: "root"
-  # mysqlPassword: "123456"
   mysqlRootPassword: "123456"
   mysqlDatabase: "ApolloConfigDB"
   ## Persist data to a persistent volume
@@ -2215,7 +2213,6 @@ proconfigservicemysql:
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='命名空间';
 
 
-
       # Dump of table namespacelock
       # ------------------------------------------------------------
 
@@ -2233,7 +2230,6 @@ proconfigservicemysql:
         UNIQUE KEY `IX_NamespaceId` (`NamespaceId`),
         KEY `DataChange_LastTime` (`DataChange_LastTime`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='namespace的编辑锁';
-
 
 
       # Dump of table release
@@ -2430,8 +2426,6 @@ portalmysql:
         KEY `DataChange_LastTime` (`DataChange_LastTime`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='应用namespace定义';
 
-
-
       # Dump of table consumer
       # ------------------------------------------------------------
 
@@ -2455,8 +2449,6 @@ portalmysql:
         KEY `DataChange_LastTime` (`DataChange_LastTime`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='开放API消费者';
 
-
-
       # Dump of table consumeraudit
       # ------------------------------------------------------------
 
@@ -2473,8 +2465,6 @@ portalmysql:
         KEY `IX_DataChange_LastTime` (`DataChange_LastTime`),
         KEY `IX_ConsumerId` (`ConsumerId`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='consumer审计表';
-
-
 
       # Dump of table consumerrole
       # ------------------------------------------------------------
@@ -2495,8 +2485,6 @@ portalmysql:
         KEY `IX_RoleId` (`RoleId`),
         KEY `IX_ConsumerId_RoleId` (`ConsumerId`,`RoleId`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='consumer和role的绑定表';
-
-
 
       # Dump of table consumertoken
       # ------------------------------------------------------------
@@ -2558,8 +2546,6 @@ portalmysql:
         KEY `IX_DataChange_LastTime` (`DataChange_LastTime`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='permission表';
 
-
-
       # Dump of table role
       # ------------------------------------------------------------
 
@@ -2577,8 +2563,6 @@ portalmysql:
         KEY `IX_RoleName` (`RoleName`(191)),
         KEY `IX_DataChange_LastTime` (`DataChange_LastTime`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
-
-
 
       # Dump of table rolepermission
       # ------------------------------------------------------------
@@ -2599,8 +2583,6 @@ portalmysql:
         KEY `IX_RoleId` (`RoleId`),
         KEY `IX_PermissionId` (`PermissionId`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色和权限的绑定表';
-
-
 
       # Dump of table serverconfig
       # ------------------------------------------------------------

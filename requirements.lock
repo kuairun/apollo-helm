@@ -1,18 +1,18 @@
 dependencies:
 - name: mysql
   repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
-  version: 0.3.5
+  version: 0.15.0
 - name: mysql
   repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
-  version: 0.3.5
+  version: 0.15.0
 - name: mysql
   repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
-  version: 0.3.5
+  version: 0.15.0
 - name: mysql
   repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
-  version: 0.3.5
+  version: 0.15.0
 - name: mysql
   repository: https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts/
-  version: 0.3.5
+  version: 0.15.0
 digest: sha256:b69c771469896849ff2af847ae7e37dcc8b745f0399fde61e25286ddf0c4de67
 generated: 2019-04-18T14:33:09.0434032+08:00
