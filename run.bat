@@ -31,8 +31,9 @@ helm install --name apollo --namespace kr-infra ./ ^
              --set proadminservice.extraEnv."eureka.instance.hostname"="apollo-proadminservice" ^
              --set proadminservice.extraEnv."eureka.instance.preferIpAddress"="false" ^
             ^
+            --set portalmysql.enabled=true ^
             --set portal.ingress.enabled=true ^
-            --set portal.ingress.hosts={apollo-portal.k8s-dev.com}
+            --set portal.ingress.hosts={apollo-portal.sinotopia.cn}
 
 
 @REM Set local storage

@@ -2343,8 +2343,6 @@ portalmysql:
   enabled: true
   mysqlUser: "admin"
   mysqlPassword: "admin"
-  # mysqlUser: "root"
-  # mysqlPassword: "123456"
   mysqlRootPassword: "123456"
   mysqlDatabase: "ApolloPortalDB"
   ## Persist data to a persistent volume
@@ -2375,7 +2373,7 @@ portalmysql:
       # Create Database
       # ------------------------------------------------------------
       CREATE DATABASE IF NOT EXISTS ApolloPortalDB DEFAULT CHARACTER SET = utf8mb4;
-            Use ApolloPortalDB;
+      Use ApolloPortalDB;
 
       # Dump of table app
       # ------------------------------------------------------------
